@@ -1,0 +1,12 @@
+[package]
+name = "libtest"
+version = "0.1.0"
+links = "test"
+build = "build.rs"
+edition = "2021"
+
+[dependencies]
+
+[lib]
+name = "test_sys"
+

@@ -25,3 +25,6 @@ dist-ssr
 
 # cargo 
 target/
+
+# macos 
+*.dSYM/
