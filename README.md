@@ -18,5 +18,13 @@ SPA = wasm(rust) + react
 - allow customize regex and preview
 - other features like add support for loop, sort and duplicate removing
 
+# treesitter
+
+incremental modify will retain the node id, so fe should have some mechanism like mode, once toggle mode and modify the json, we can relay on the id to improve our parse process. 
+
+- My laptop has a small screen, so adding a mode toggling on fe would save a lot of screen space. Would user with larger screen want to modify json on the fly? Even the purpose of this project is generating according bash script.
+- Each node should contain its kind, id, content, and children. Where should the script generating code be? In wasm rust? Or in fe.
 
 # reference
+
+- [treesitter](https://tree-sitter.github.io/tree-sitter/)
