@@ -1,8 +1,10 @@
+use serde::{Deserialize, Serialize};
 use std::ffi::c_char;
-
 use test_sys::greet;
+use tree_sitter::{Node, Parser};
 use wasm_bindgen::prelude::*;
 
+#[derive(Serialize, Deserialize)]
 struct Jnode {
   id: usize,
   kind: String,
@@ -19,6 +21,18 @@ pub fn greet_native() -> *mut [u8; 4] {
 pub fn greet_ffi(name: *const c_char) -> *mut c_char {
   let buf = [0 as c_char; 64].as_mut_ptr();
   unsafe { greet(name, buf) }
+}
+
+#[wasm_bindgen]
+pub fn reveal(json: &str) -> JsValue {
+  let outer = Jnode {
+    id: 1,
+    kind: "string".to_owned(),
+    content: "content".to_owned(),
+    children: Vec::<Jnode>::new(),
+  };
+
+  serde_wasm_bindgen::to_value(&outer).unwrap()
 }
 
 #[cfg(test)]
