@@ -1,11 +1,13 @@
+import Logo from "./Logo";
+import Info from "./Info";
 
-function Header(): JSX.Element {
-
+function Header() {
   return (
-    <>
-      <img src="/logo.svg" className="h-10 mt-4" />
-    </>
-  )
+    <div className="flex justify-between items-center h-12 px-6 bg-teal-950">
+      <Logo />
+      <Info />
+    </div>
+  );
 }
 
-export default Header
+export default Header;

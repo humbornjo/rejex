@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use std::ffi::c_char;
 use test_sys::greet;
-use tree_sitter::{Node, Parser};
+use tree_sitter::{Node, Parser, Tree};
 use wasm_bindgen::prelude::*;
 
 #[derive(Serialize, Deserialize)]
@@ -34,6 +34,10 @@ pub fn reveal(json: &str) -> JsValue {
 
   serde_wasm_bindgen::to_value(&outer).unwrap()
 }
+
+fn ts2jnode(tree: &Tree) -> &Jnode {}
+
+fn parse_json(json: &str) -> &Tree {}
 
 #[cfg(test)]
 mod test {
