@@ -1,11 +1,12 @@
 import Header from "./components/Header/Header";
+import Rejexer from "./components/Rejexer/Rejexer";
 
 function App() {
   return (
-    <>
+    <div className="w-full h-full">
       <Header />
-      <div className="card"></div>
-    </>
+      <Rejexer />
+    </div>
   );
 }
 

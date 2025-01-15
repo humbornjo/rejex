@@ -1,9 +1,13 @@
 import Logo from "./Logo";
 import Info from "./Info";
 
-function Header() {
+function Header(): JSX.Element {
   return (
-    <div className="flex justify-between items-center h-12 px-6 bg-teal-950">
+    <div
+      className="h-12 bg-teal-950
+      flex justify-between items-center
+      px-4 min-w-fit"
+    >
       <Logo />
       <Info />
     </div>
